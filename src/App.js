@@ -17,6 +17,7 @@ import {
   orderBy,
   limit,
   doc,
+  onSnapshot 
 } from "firebase/firestore";
 
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -82,9 +83,16 @@ function ChatRoom() {
   const msgRef = collection(db, "messages");
   const q = query(msgRef, orderBy("createdAt","desc"), limit(10));
   const [messages] = useCollectionData(q, { idField: "id" });
-  messages?.reverse();
-    
+
+  if(messages!= undefined){
+    messages.reverse();
+  }
   console.log(messages);
+
+  
+
+
+
   const [formValue, setFormValue] = useState("");
 
   const sendMessage = async (e) => {
