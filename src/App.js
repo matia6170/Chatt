@@ -22,6 +22,7 @@ import {
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import { type } from "@testing-library/user-event/dist/type";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyDStD819xtHnxO5R8s6ioWln-bZV3DDeK8",
@@ -77,24 +78,27 @@ function SignOut() {
 }
 
 function ChatRoom() {
-  
+  const [formValue, setFormValue] = useState("");
+
   const dummy = useRef();
 
   const msgRef = collection(db, "messages");
-  const q = query(msgRef, orderBy("createdAt","desc"), limit(10));
+  const q = query(msgRef, orderBy("createdAt","desc"), limit(5));
   const [messages] = useCollectionData(q, { idField: "id" });
-
+ 
+console.log(typeof(messages))
   if(messages!= undefined){
     messages.reverse();
-  }
+    console.log("reversed")
+  } 
+
   console.log(messages);
 
+ 
+
+
+
   
-
-
-
-  const [formValue, setFormValue] = useState("");
-
   const sendMessage = async (e) => {
     e.preventDefault();
     const { uid, photoURL } = auth.currentUser;
@@ -113,6 +117,8 @@ function ChatRoom() {
       console.error("Error adding document: ", e);
     }
 
+    
+
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   };
@@ -121,13 +127,14 @@ function ChatRoom() {
     <div>
       <div>
 
-        {messages?.map(msg => 
+        {messages && messages.map(msg => (
+          
           <Message
             text={msg.text}
             uid={msg.uid}
             photoURL={msg.photoURL}
             key={msg.createdAt}
-          ></Message>
+          ></Message>)
         )}
          <span ref={dummy}></span>
 
@@ -148,6 +155,8 @@ function ChatRoom() {
 }
 
 function Message({text, uid, photoURL}) {
+
+  
   return (
     <div>
       <img style={{width: "30px"}}
