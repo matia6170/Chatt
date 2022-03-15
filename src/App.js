@@ -142,7 +142,7 @@ function ChatRoom() {
 function Message({text, uid, photoURL}) {
   return (
     <div>
-      <img
+      <img style={{width: "30px"}}
         src={
           photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
         }
