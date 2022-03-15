@@ -87,10 +87,7 @@ function ChatRoom() {
   const [messages] = useCollectionData(q, { idField: "id" });
  
 console.log(typeof(messages))
-  if(messages!= undefined){
-    messages.reverse();
-    console.log("reversed")
-  } 
+
 
   console.log(messages);
 
@@ -127,7 +124,7 @@ console.log(typeof(messages))
     <div>
       <div>
 
-        {messages && messages.map(msg => (
+        {messages && messages.slice(0).reverse().map(msg => (
           
           <Message
             text={msg.text}
