@@ -43,7 +43,7 @@ export default function App() {
 
   return (
     <div className="App container">
-      <h1 className="display-1 title">Test Chat</h1>
+      <div className="display-4 title">Test Chat</div>
       <SignOut />
       {user ? <ChatRoom /> : <SignIn />}
     </div>
@@ -166,7 +166,7 @@ function Message({ text, uid, photoURL }) {
           photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
         }
       />
-      <p>{text}</p>
+      <p className="lead">{text}</p>
     </div>
   );
 }
