@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
-import "./App.css";
+import React, { useState, useRef, useEffect} from "react";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
@@ -17,7 +18,7 @@ import {
   orderBy,
   limit,
   doc,
-  onSnapshot 
+  onSnapshot,
 } from "firebase/firestore";
 
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -41,8 +42,8 @@ export default function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="App">
-      <h1>hi</h1>
+    <div className="App container">
+      <h1 className="display-1">Test Chat</h1>
       <SignOut />
       {user ? <ChatRoom /> : <SignIn />}
     </div>
@@ -55,8 +56,14 @@ function SignIn() {
     signInWithPopup(auth, provider);
   };
   return (
-    <div>
-      <button onClick={signInWithGoogle}>Sign in</button>
+    <div className="text-center">
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={signInWithGoogle}
+      >
+        Sign in
+      </button>
     </div>
   );
 }
@@ -74,7 +81,13 @@ function SignOut() {
       });
   };
 
-  return <button onClick={logout}>Sign Out</button>;
+  return (
+    <div className="text-center"> 
+      <button type="button" className="btn btn-warning" onClick={logout}>
+        Sign Out
+      </button>
+    </div>
+  );
 }
 
 function ChatRoom() {
@@ -83,19 +96,13 @@ function ChatRoom() {
   const dummy = useRef();
 
   const msgRef = collection(db, "messages");
-  const q = query(msgRef, orderBy("createdAt","desc"), limit(5));
+  const q = query(msgRef, orderBy("createdAt", "desc"), limit(25));
   const [messages] = useCollectionData(q, { idField: "id" });
- 
-console.log(typeof(messages))
 
+  console.log(typeof messages);
 
   console.log(messages);
 
- 
-
-
-
-  
   const sendMessage = async (e) => {
     e.preventDefault();
     const { uid, photoURL } = auth.currentUser;
@@ -114,27 +121,26 @@ console.log(typeof(messages))
       console.error("Error adding document: ", e);
     }
 
-    
-
-    setFormValue('');
-    dummy.current.scrollIntoView({ behavior: 'smooth' });
+    setFormValue("");
+    dummy.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div>
-      <div>
-
-        {messages && messages.slice(0).reverse().map(msg => (
-          
-          <Message
-            text={msg.text}
-            uid={msg.uid}
-            photoURL={msg.photoURL}
-            key={msg.createdAt}
-          ></Message>)
-        )}
-         <span ref={dummy}></span>
-
+      <div className="message-box">
+        {messages &&
+          messages
+            .slice(0)
+            .reverse()
+            .map((msg) => (
+              <Message
+                text={msg.text}
+                uid={msg.uid}
+                photoURL={msg.photoURL}
+                key={msg.createdAt}
+              ></Message>
+            ))}
+        <span ref={dummy}></span>
       </div>
       <form onSubmit={sendMessage}>
         <input
@@ -151,12 +157,11 @@ console.log(typeof(messages))
   );
 }
 
-function Message({text, uid, photoURL}) {
-
-  
+function Message({ text, uid, photoURL }) {
   return (
-    <div>
-      <img style={{width: "30px"}}
+    <div className="message ">
+      <img
+        style={{ width: "30px" }}
         src={
           photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
         }
