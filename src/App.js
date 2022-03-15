@@ -43,7 +43,7 @@ export default function App() {
 
   return (
     <div className="App container">
-      <h1 className="display-1">Test Chat</h1>
+      <h1 className="display-1 title">Test Chat</h1>
       <SignOut />
       {user ? <ChatRoom /> : <SignIn />}
     </div>
