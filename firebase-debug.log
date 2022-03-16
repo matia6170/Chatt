@@ -1,0 +1,23 @@
+[debug] [2022-03-16T05:09:27.060Z] ----------------------------------------------------------------------
+[debug] [2022-03-16T05:09:27.062Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\matia\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2022-03-16T05:09:27.062Z] CLI Version:   10.2.2
+[debug] [2022-03-16T05:09:27.062Z] Platform:      win32
+[debug] [2022-03-16T05:09:27.062Z] Node Version:  v14.17.6
+[debug] [2022-03-16T05:09:27.063Z] Time:          Wed Mar 16 2022 14:09:27 GMT+0900 (Korean Standard Time)
+[debug] [2022-03-16T05:09:27.063Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-03-16T05:09:27.141Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-03-16T05:09:27.142Z] > authorizing via signed-in user (matia6170@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[debug] [2022-03-16T05:09:27.181Z] [hub] writing locator at C:\Users\matia\AppData\Local\Temp\hub-superchat-10573.json
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub, storage\u001b[22m"}}
+[warn] !  Your requested "node" version "16" doesn't match your global version "14". Using node@14 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \"16\" doesn't match your global version \"14\". Using node@14 from host."}}
+[debug] [2022-03-16T05:09:27.208Z] defaultcredentials: writing to file C:\Users\matia\AppData\Roaming\firebase\matia6170_gmail_com_application_default_credentials.json
+[debug] [2022-03-16T05:09:27.210Z] Setting GAC to C:\Users\matia\AppData\Roaming\firebase\matia6170_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\matia\\AppData\\Roaming\\firebase\\matia6170_gmail_com_application_default_credentials.json"}}
+[debug] [2022-03-16T05:09:27.212Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/superchat-10573/adminSdkConfig [none]
+[debug] [2022-03-16T05:09:27.632Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/superchat-10573/adminSdkConfig 200
+[debug] [2022-03-16T05:09:27.632Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/superchat-10573/adminSdkConfig {"projectId":"superchat-10573","storageBucket":"superchat-10573.appspot.com","locationId":"us-central"}
+[debug] [2022-03-16T05:09:27.650Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/superchat-10573/sites 
+[debug] [2022-03-16T05:09:28.706Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/superchat-10573/sites 200
+[debug] [2022-03-16T05:09:28.706Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/superchat-10573/sites {"sites":[{"name":"projects/674009775216/sites/superchat-10573","defaultUrl":"https://superchat-10573.web.app","appId":"1:674009775216:web:2781e3fc30d808fe9f08b5","type":"DEFAULT_SITE"}]}
+[debug] [2022-03-16T05:09:28.707Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/superchat-10573/webApps/1:674009775216:web:2781e3fc30d808fe9f08b5/config [none]
