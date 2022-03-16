@@ -1,5 +1,7 @@
 import React from "react";
 
+
+//props
 export default function Message({ text, uid, photoURL }) {
     return (
       <div className="message ">

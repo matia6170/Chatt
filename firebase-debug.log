@@ -21,3 +21,113 @@
 [debug] [2022-03-16T05:09:28.706Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/superchat-10573/sites 200
 [debug] [2022-03-16T05:09:28.706Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/superchat-10573/sites {"sites":[{"name":"projects/674009775216/sites/superchat-10573","defaultUrl":"https://superchat-10573.web.app","appId":"1:674009775216:web:2781e3fc30d808fe9f08b5","type":"DEFAULT_SITE"}]}
 [debug] [2022-03-16T05:09:28.707Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/superchat-10573/webApps/1:674009775216:web:2781e3fc30d808fe9f08b5/config [none]
+[debug] [2022-03-16T05:09:29.957Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/superchat-10573/webApps/1:674009775216:web:2781e3fc30d808fe9f08b5/config 200
+[debug] [2022-03-16T05:09:29.957Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/superchat-10573/webApps/1:674009775216:web:2781e3fc30d808fe9f08b5/config {"projectId":"superchat-10573","appId":"1:674009775216:web:2781e3fc30d808fe9f08b5","storageBucket":"superchat-10573.appspot.com","locationId":"us-central","apiKey":"AIzaSyDStD819xtHnxO5R8s6ioWln-bZV3DDeK8","authDomain":"superchat-10573.firebaseapp.com","messagingSenderId":"674009775216","measurementId":"G-V6QG9WDLSY"}
+[info] i  hosting: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2022-03-16T05:09:29.992Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-03-16T05:09:29.992Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-03-16T05:09:29.993Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\matia\\.cache\\firebase\\emulators\\ui-v1.6.5\\server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\matia\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.6.5\\\\server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-03-16T05:09:30.133Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] i  functions: Watching "D:\projects\reactjs\superchat\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"D:\\projects\\reactjs\\superchat\\functions\" for Cloud Functions..."}}
+[debug] [2022-03-16T05:09:30.265Z] Validating nodejs source
+[debug] [2022-03-16T05:09:32.932Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-03-16T05:09:32.932Z] Building nodejs source
+[debug] [2022-03-16T05:09:32.932Z] Analyzing nodejs backend spec
+[info] +  functions[us-central1-helloWorld]: http function initialized (http://localhost:5001/superchat-10573/us-central1/helloWorld). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/superchat-10573/us-central1/helloWorld)."}}
+[info] +  functions[us-central1-bye]: http function initialized (http://localhost:5001/superchat-10573/us-central1/bye). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/superchat-10573/us-central1/bye)."}}
+[info] +  functions[us-central1-addMessage]: http function initialized (http://localhost:5001/superchat-10573/us-central1/addMessage). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/superchat-10573/us-central1/addMessage)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4000                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:5001 │ http://localhost:4000/functions │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Hosting   │ localhost:5000 │ n/a                             │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2022-03-16T05:11:13.124Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-16T05:11:13.124Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-16T05:11:13.125Z] Accepted request POST /superchat-10573/us-central1/addMessage --> us-central1-addMessage
+[debug] [2022-03-16T05:11:13.134Z] [worker-pool] addWorker(us-central1-addMessage) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-addMessage)"}}
+[debug] [2022-03-16T05:11:13.135Z] [worker-pool] Adding worker with key us-central1-addMessage, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-addMessage, total=1"}}
+[debug] [2022-03-16T05:11:13.135Z] [worker-pool] submitWork(triggerId=us-central1-addMessage) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-addMessage)"}}
+[debug] [2022-03-16T05:11:13.135Z] [worker-us-central1-addMessage-aebdaefe-9af9-4f14-9198-23c12afda907]: Assigning socketPath: \\?\pipe\D:\projects\reactjs\superchat\functions\6928 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-addMessage-aebdaefe-9af9-4f14-9198-23c12afda907]: Assigning socketPath: \\\\?\\pipe\\D:\\projects\\reactjs\\superchat\\functions\\6928"}}
+[debug] [2022-03-16T05:11:13.136Z] [worker-us-central1-addMessage-aebdaefe-9af9-4f14-9198-23c12afda907]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-addMessage-aebdaefe-9af9-4f14-9198-23c12afda907]: BUSY"}}
+[debug] [2022-03-16T05:11:14.491Z] [runtime-status] [6928] Functions runtime initialized. {"cwd":"D:\\projects\\reactjs\\superchat\\functions","node_version":"14.17.6"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Functions runtime initialized. {\"cwd\":\"D:\\\\projects\\\\reactjs\\\\superchat\\\\functions\",\"node_version\":\"14.17.6\"}"}}
+[debug] [2022-03-16T05:11:14.492Z] [runtime-status] [6928] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Disabled runtime features: undefined"}}
+[debug] [2022-03-16T05:11:14.497Z] [runtime-status] [6928] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.0.2","resolution":"D:\\projects\\reactjs\\superchat\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"D:\\\\projects\\\\reactjs\\\\superchat\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-16T05:11:14.499Z] [runtime-status] [6928] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"D:\\projects\\reactjs\\superchat\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"D:\\\\projects\\\\reactjs\\\\superchat\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-16T05:11:14.500Z] [runtime-status] [6928] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-03-16T05:11:14.501Z] [runtime-status] [6928] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"D:\\projects\\reactjs\\superchat\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"D:\\\\projects\\\\reactjs\\\\superchat\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-16T05:11:14.591Z] [runtime-status] [6928] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-03-16T05:11:14.591Z] [runtime-status] [6928] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.18.1","resolution":"D:\\projects\\reactjs\\superchat\\functions\\node_modules\\firebase-functions\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"D:\\\\projects\\\\reactjs\\\\superchat\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}}"}}
+[debug] [2022-03-16T05:11:14.592Z] [runtime-status] [6928] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"D:\\projects\\reactjs\\superchat\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"D:\\\\projects\\\\reactjs\\\\superchat\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-16T05:11:14.595Z] [runtime-status] [6928] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.0.2","resolution":"D:\\projects\\reactjs\\superchat\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"D:\\\\projects\\\\reactjs\\\\superchat\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-16T05:11:14.596Z] [runtime-status] [6928] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.18.1","resolution":"D:\\projects\\reactjs\\superchat\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.18.1\",\"resolution\":\"D:\\\\projects\\\\reactjs\\\\superchat\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-16T05:11:14.596Z] [runtime-status] [6928] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.0.2","resolution":"D:\\projects\\reactjs\\superchat\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"D:\\\\projects\\\\reactjs\\\\superchat\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2022-03-16T05:11:14.598Z] [runtime-status] [6928] Beginning invocation function addMessage! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Beginning invocation function addMessage!"}}
+[info] i  functions: Beginning execution of "addMessage" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"Beginning execution of \"addMessage\""}}
+[debug] [2022-03-16T05:11:14.600Z] [runtime-status] [6928] Running addMessage in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Running addMessage in signature http"}}
+[debug] [2022-03-16T05:11:14.604Z] [runtime-status] [6928] Attempting to listen to socketPath: \\?\pipe\D:\projects\reactjs\superchat\functions\6928 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Attempting to listen to socketPath: \\\\?\\pipe\\D:\\projects\\reactjs\\superchat\\functions\\6928"}}
+[debug] [2022-03-16T05:11:14.610Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-16T05:11:14.611Z] [functions] Got req.url=/superchat-10573/us-central1/addMessage, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/superchat-10573/us-central1/addMessage, mapping to path=/"}}
+[debug] [2022-03-16T05:11:14.635Z] [runtime-status] [6928] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Ephemeral server handling POST request"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"INFO","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"INFO","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"INFO\",\"message\":\"Callable request verification passed\"}"}}
+[debug] [2022-03-16T05:11:14.640Z] [runtime-status] [6928] No callable functions auth found {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] No callable functions auth found"}}
+[debug] [2022-03-16T05:11:14.644Z] [runtime-status] [6928] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Ephemeral server survived."}}
+[info] i  functions: Finished "addMessage" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"Finished \"addMessage\" in ~1s"}}
+[debug] [2022-03-16T05:11:14.647Z] [worker-us-central1-addMessage-aebdaefe-9af9-4f14-9198-23c12afda907]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-addMessage-aebdaefe-9af9-4f14-9198-23c12afda907]: IDLE"}}
+[debug] [2022-03-16T05:11:14.648Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-16T05:17:16.670Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-16T05:17:16.670Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-16T05:17:16.670Z] Accepted request POST /superchat-10573/us-central1/addMessage --> us-central1-addMessage
+[debug] [2022-03-16T05:17:16.670Z] [worker-pool] submitWork(triggerId=us-central1-addMessage) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-addMessage)"}}
+[debug] [2022-03-16T05:17:16.671Z] [worker-us-central1-addMessage-aebdaefe-9af9-4f14-9198-23c12afda907]: Assigning socketPath: \\?\pipe\D:\projects\reactjs\superchat\functions\6928 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-addMessage-aebdaefe-9af9-4f14-9198-23c12afda907]: Assigning socketPath: \\\\?\\pipe\\D:\\projects\\reactjs\\superchat\\functions\\6928"}}
+[debug] [2022-03-16T05:17:16.671Z] [worker-us-central1-addMessage-aebdaefe-9af9-4f14-9198-23c12afda907]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-addMessage-aebdaefe-9af9-4f14-9198-23c12afda907]: BUSY"}}
+[debug] [2022-03-16T05:17:16.672Z] [runtime-status] [6928] Beginning invocation function addMessage! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Beginning invocation function addMessage!"}}
+[info] i  functions: Beginning execution of "addMessage" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"Beginning execution of \"addMessage\""}}
+[debug] [2022-03-16T05:17:16.673Z] [runtime-status] [6928] Running addMessage in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Running addMessage in signature http"}}
+[debug] [2022-03-16T05:17:16.673Z] [runtime-status] [6928] Attempting to listen to socketPath: \\?\pipe\D:\projects\reactjs\superchat\functions\6928 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Attempting to listen to socketPath: \\\\?\\pipe\\D:\\projects\\reactjs\\superchat\\functions\\6928"}}
+[debug] [2022-03-16T05:17:16.675Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-16T05:17:16.676Z] [functions] Got req.url=/superchat-10573/us-central1/addMessage, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/superchat-10573/us-central1/addMessage, mapping to path=/"}}
+[debug] [2022-03-16T05:17:16.679Z] [runtime-status] [6928] Ephemeral server handling POST request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Ephemeral server handling POST request"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"INFO","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"INFO","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"INFO\",\"message\":\"Callable request verification passed\"}"}}
+[debug] [2022-03-16T05:17:16.681Z] [runtime-status] [6928] No callable functions auth found {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] No callable functions auth found"}}
+[debug] [2022-03-16T05:17:16.681Z] [runtime-status] [6928] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"[runtime-status] [6928] Ephemeral server survived."}}
+[info] i  functions: Finished "addMessage" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-addMessage"},"extension":{},"message":"Finished \"addMessage\" in ~1s"}}
+[debug] [2022-03-16T05:17:16.684Z] [worker-us-central1-addMessage-aebdaefe-9af9-4f14-9198-23c12afda907]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-addMessage-aebdaefe-9af9-4f14-9198-23c12afda907]: IDLE"}}
+[debug] [2022-03-16T05:17:16.685Z] [work-queue] {"queueLength":0,"workRunningCount":0}
