@@ -7,7 +7,8 @@ import {
   orderBy,
   limit,
   doc,
-  getDoc
+  getDoc,
+  onSnapshot
 } from "firebase/firestore";
 
 import { useCollectionData } from "react-firebase-hooks/firestore";
@@ -20,6 +21,7 @@ export default function ChatRoom(props) {
   const [formValue, setFormValue] = useState("");
   const [docid, setDocid] = useState("");
   const [title,setTitle] = useState("");
+  const [messageData,setMessageData]=useState();
   useEffect(() => {
     setDocid(props.docid.id);
 
@@ -29,22 +31,33 @@ export default function ChatRoom(props) {
       setTitle(doc.data().name);
       
     });
+
+    let msgRef;
+    if (docid.length > 0) {
+      msgRef = collection(db, "chat", docid, "messages");
+    } else {
+      msgRef = collection(db, "chat", "tt", "messages");
+    }
+  
+    const q = query(msgRef, orderBy("createdAt", "desc"), limit(25));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const chatList = [];
+      querySnapshot.forEach((doc) => {
+        chatList.push(doc.data());
+      });
+      setMessageData(chatList);
+      console.log(chatList)
+    });
     
   }, []);
-
   console.log(docid);
+const dummy = useRef();
 
-  const dummy = useRef();
+  useEffect(()=>{
+    dummy.current.scrollIntoView({ behavior: "smooth" });
+  },[messageData])
 
-  let msgRef;
-  if (docid.length > 0) {
-    msgRef = collection(db, "chat", docid, "messages");
-  } else {
-    msgRef = collection(db, "chat", "tt", "messages");
-  }
 
-  const q = query(msgRef, orderBy("createdAt", "desc"), limit(25));
-  const [messages] = useCollectionData(q, { idField: "id" });
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -72,8 +85,8 @@ export default function ChatRoom(props) {
     <div >
       <div className="display-4 title">{title}</div>
       <div className="message-box">
-        {messages &&
-          messages
+        {messageData &&
+          messageData
             .slice(0)
             .reverse()
             .map((msg) => (
