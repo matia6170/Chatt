@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { getApp } from "firebase/app";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -10,6 +10,7 @@ import { auth, firebaseApp, db } from "../firebase/firebaseConfig";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
+import { Button } from "react-bootstrap";
 
 
 
@@ -23,8 +24,9 @@ export default function Chat() {
 
 
   return (
-    <div className="App ">
+    <div className="App container">
       
+      <Button as={Link} to="/">Back</Button>
       
       {user ? <ChatRoom docid={docid} /> : <h1 className="text-center display-1">You must login!</h1>}
     </div>

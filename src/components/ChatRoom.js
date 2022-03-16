@@ -69,7 +69,7 @@ export default function ChatRoom(props) {
   };
 
   return (
-    <div className="container">
+    <div >
       <div className="display-4 title">{title}</div>
       <div className="message-box">
         {messages &&

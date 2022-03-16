@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar/NavBar"
+import NavigationBar from "./components/NavBar/NavigationBar"
 import Urlparmtest from "./components/Urlparmtest";
 
 
@@ -19,7 +19,7 @@ export default function App() {
   
   return (
     <BrowserRouter>
-      <NavBar/>
+      <NavigationBar/>
       <Routes>
         
         <Route path="/" element={<Home/>}/>
