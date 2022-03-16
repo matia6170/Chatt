@@ -7,8 +7,7 @@ import {
   orderBy,
   limit,
   doc,
-  getDoc,
-  onSnapshot
+  getDoc
 } from "firebase/firestore";
 
 import { useCollectionData } from "react-firebase-hooks/firestore";
@@ -21,7 +20,6 @@ export default function ChatRoom(props) {
   const [formValue, setFormValue] = useState("");
   const [docid, setDocid] = useState("");
   const [title,setTitle] = useState("");
-  const [messageData,setMessageData]=useState();
   useEffect(() => {
     setDocid(props.docid.id);
 
@@ -31,34 +29,27 @@ export default function ChatRoom(props) {
       setTitle(doc.data().name);
       
     });
-
-    let msgRef;
-    if (docid.length > 0) {
-      msgRef = collection(db, "chat", docid, "messages");
-    } else {
-      msgRef = collection(db, "chat", "tt", "messages");
-    }
-  
-    const q = query(msgRef, orderBy("createdAt", "desc"), limit(25));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const chatList = [];
-      querySnapshot.forEach((doc) => {
-        chatList.push(doc.data());
-      });
-      setMessageData(chatList);
-      console.log(chatList)
-    });
     
   }, []);
-  console.log(docid);
-const dummy = useRef();
 
+  console.log(docid);
+
+  const dummy = useRef();
+  
+
+  let msgRef;
+  if (docid.length > 0) {
+    msgRef = collection(db, "chat", docid, "messages");
+  } else {
+    msgRef = collection(db, "chat", "tt", "messages");
+  }
+
+  const q = query(msgRef, orderBy("createdAt", "desc"), limit(25));
+  const [messages] = useCollectionData(q, { idField: "id" });
   useEffect(()=>{
     dummy.current.scrollIntoView({ behavior: "smooth" });
-  },[messageData])
 
-
-
+  },[messages])
   const sendMessage = async (e) => {
     e.preventDefault();
     const { uid, photoURL } = auth.currentUser;
@@ -85,8 +76,8 @@ const dummy = useRef();
     <div >
       <div className="display-4 title">{title}</div>
       <div className="message-box">
-        {messageData &&
-          messageData
+        {messages &&
+          messages
             .slice(0)
             .reverse()
             .map((msg) => (
